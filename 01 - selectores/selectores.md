@@ -154,6 +154,24 @@ section p:nth-child(3){
 }
 ```
 
+Palabras clave **odd** y **even** para esta seudoclase.
+
+* **odd** Afecta a los elementos que son hijos de otro elemento y tienen un índice impar.
+
+```CSS
+p:nth-child(odd){
+    font-size:25px;
+}
+```
+
+* **even** Afecta a aquellos que tienen un índice par.
+
+```CSS
+p:nth-child(even){
+    font-size:25px;
+}
+```
+
 **:first-child**: ESta seudoclase selecciona el primer elemento de una lista de elementos hermanos.
 
 ```CSS
@@ -175,5 +193,12 @@ p:last-child{
 **:first-of-type**: Esta seudoclase selecciona el primer elemento de una lista de elementos del mismo tipo.
 
 **:not(selector)**: Esta seudoclase selecciona los elementos que no coinciden con el selector entre paréntesis.
+
+```CSS
+    /* Aplica estilo a todos los elementos excepto <p> */
+:not(p){
+    margin: 0px;
+}
+```
 
 [Volver &ldca;](../README.md)
