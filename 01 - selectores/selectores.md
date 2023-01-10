@@ -38,22 +38,142 @@ h1 + p{
 
 ```CSS
 p~p{
-    fon-zise: 10px;
+    fon-size: 10px;
 }
 ```
 
-**Atributo Id**
+---
+## Atributo Id
 
 Para seleccionar un elemento HTML sin considerar su tipo, se puede usar el atributo **Id**. Para referenciar un elemento usando su atributo **Id**, el selector debe incluir el valor del atributo precedido por el carácter numeral (#).
 
 ```CSS
 #text{
-    font-zise: 10px;
+    font-size: 10px;
 }
 ```
 
-**Atributo Class**
+---
+## Atributo Class
 
 Este atributo es más flexible y se puede asignar a varios elementos dentro del mismo documento.
+
+```HTML
+<p class="texto">Frase 1</p>
+<p class="texto">Frase 2</p>
+```
+
+```CSS
+.texto{
+    font-size: 10px;
+}
+```
+
+A un mismo elemento se le peude asignar varias clases.
+
+---
+## otros atributos
+
+La sintaxis para definir esta clase de selectores incluye el nombre del elemento seguido del nombre del atributo en corchetes:
+
+```CSS
+p[name]{
+    font-size:10px;
+}
+```
+
+Referenciando elementos **< p>** que tienen un atributo *name* con el valor *texto*:
+
+```CSS
+p[name="texto"]{
+    fon-size:10px;
+}
+```
+
+*CSS* nos permite combinar carácter **=** con otros caracteres para realizar una selección más específica.
+
+Referencia cualquier elemento **< p>** con un atributo **name** cuyo valor incluye la palabra "**mi**".
+
+```CSS
+p[name~="mi"]{
+    font-size:10px;
+}
+```
+
+Referencia cuanlquier elemento **< p>** con el atributo **name** cuyo valor comienza en "**mi**".
+
+```CSS
+p[name^="mi"]{
+    font-size:10px;
+}
+```
+
+Referencia cualquier elemento **< p>** con un atributo **name** cuyo valor termina en "**mi**".
+
+```CSS
+p[name$="mi"]{
+    font-size:10px;
+}
+```
+
+Referencia cualquier elemento **< p>** con un atributo **name** cuyo valor contiene la cadena de carecteres "**mi**".
+
+```CSS
+p[name*="mi"]{
+    font-size:10px;
+}
+```
+
+---
+## Seudoclases
+
+Nos permiten referenciar elementos HTML por medio de sus características, como sus posiciones en el código o sus condiciones actuales.
+
+```HTML
+<body>
+    <main>
+        <section>
+            <p>Frase1</P>
+            <p>Frase2</P>
+            <p>Frase3</P>
+            <p>Frase4</P>
+        </Section>
+    </main>
+</body>
+```
+
+**:nth-child(valor)**: Esta seudoclase selecciona un elemento de una lista de elementos hermanos que se encuentran en la posición especificada por el valor entre paréntesis.
+
+```CSS
+section p:nth-child(2){
+    fon-size:10px
+    color: #fff;
+}
+section p:nth-child(3){
+    color: #ccc;
+}
+```
+
+**:first-child**: ESta seudoclase selecciona el primer elemento de una lista de elementos hermanos.
+
+```CSS
+p:first-child{
+    font-size:20px;
+}
+```
+
+**:last-child**: Esta seudoclase selecciona el último elemento de una lista de elementos hermanos.
+
+```CSS
+p:last-child{
+    font-size:25px;
+}
+```
+
+**:only-child**: Esta seudoclase selecciona un elemento cuando es el único hijo de otro elemento.
+
+**:first-of-type**: Esta seudoclase selecciona el primer elemento de una lista de elementos del mismo tipo.
+
+**:not(selector)**: Esta seudoclase selecciona los elementos que no coinciden con el selector entre paréntesis.
 
 [Volver &ldca;](../README.md)
